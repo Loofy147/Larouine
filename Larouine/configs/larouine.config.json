@@ -1,0 +1,8 @@
+{
+    "system_name": "Larouine AI",
+    "version": "4.2",
+    "auto_update": true,
+    "allowed_domains": ["github.com"],
+    "max_file_size": 1048576,
+    "backup_strategy": "versioned"
+}
