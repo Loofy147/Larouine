@@ -334,25 +334,24 @@
   },
 
   "open_source_libraries": {
-    "real_time_chat": {
-      "name": "Socket.io",
-      "description": "Real-time communication library for chat features",
-      "repo_url": "https://github.com/socketio/socket.io"
-    },
-    "qr_code_scanner": {
-      "name": "react-qr-scanner",
-      "description": "Open-source QR scanner for mobile/web applications",
-      "repo_url": "https://github.com/JodusNodus/react-qr-scanner"
-    },
-    "push_notifications": {
-      "name": "OneSignal",
-      "description": "Push notification service for mobile and web",
-      "repo_url": "https://github.com/OneSignal/OneSignal-Android-SDK"
-    },
-    "image_compression": {
-      "name": "ImageMagick",
-      "description": "Tool for image manipulation and compression",
-      "repo_url": "https://github.com/ImageMagick/ImageMagick"
-    }
+  "real_time_chat": {
+    "name": "Socket.io",
+    "description": "Real-time communication library for chat features",
+    "repo_url": "https://github.com/socketio/socket.io"
+  },
+  "qr_code_scanner": {
+    "name": "react-qr-scanner",
+    "description": "Open-source QR scanner for mobile/web applications",
+    "repo_url": "https://github.com/JodusNodus/react-qr-scanner"
+  },
+  "push_notifications": {
+    "name": "OneSignal",
+    "description": "Push notification service for mobile and web",
+    "repo_url": "https://github.com/OneSignal/OneSignal-Android-SDK"
+  },
+  "image_compression": {
+    "name": "ImageMagick",
+    "description": "Tool for image manipulation and compression",
+    "repo_url": "https://github.com/ImageMagick/ImageMagick"
   }
 }
