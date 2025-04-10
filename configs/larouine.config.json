@@ -333,7 +333,7 @@
     }
   },
 
-  "open_source_libraries": {
+"open_source_libraries": {
   "real_time_chat": {
     "name": "Socket.io",
     "description": "Real-time communication library for chat features",
