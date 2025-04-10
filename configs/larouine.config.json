@@ -273,5 +273,86 @@
   },
 
   "external_resources": {
-    "design_assets": {
-      "figma_url": "https://figma.com/file/****"
+  "design_assets": {
+    "figma_url": "https://figma.com/file/****",
+    "icon_set": "Material Design Icons v5",
+    "color_palettes": [
+      "https://coolors.co/palette/****",
+      "https://www.color-hex.com/color-palettes/"
+    ],
+    "typography": {
+      "primary_font": "Roboto",
+      "secondary_font": "Poppins",
+      "font_url": "https://fonts.google.com/"
+    }
+  },
+
+  "legal_documents": {
+    "privacy_policy": "/legal/privacy_v3.pdf",
+    "terms_of_service": "/legal/tos_v2.md",
+    "cookie_policy": "/legal/cookie_policy.pdf"
+  },
+
+  "third_party_integrations": {
+    "maps": {
+      "primary": "Google Maps API",
+      "fallback": "OpenStreetMap",
+      "features": [
+        "Geocoding API",
+        "Directions API",
+        "Places Autocomplete"
+      ]
+    },
+    "payment_gateways": [
+      {
+        "name": "Dahabiya",
+        "api_version": "v2.1",
+        "features": [
+          "Card Processing",
+          "Refund Handling",
+          "3D Secure Support"
+        ],
+        "test_credentials": {
+          "sandbox_key": "dhb_sandbox_****",
+          "production_key": "ENV:DAHABIYA_PROD_KEY"
+        }
+      }
+    ],
+    "analytics": {
+      "primary": "Firebase Analytics",
+      "secondary": "Mixpanel",
+      "kpis": [
+        "User Retention Rate",
+        "Average Order Value",
+        "Delivery Time Metrics"
+      ]
+    },
+    "social_media_integration": {
+      "facebook_login": "https://developers.facebook.com/docs/facebook-login",
+      "google_login": "https://developers.google.com/identity"
+    }
+  },
+
+  "open_source_libraries": {
+    "real_time_chat": {
+      "name": "Socket.io",
+      "description": "Real-time communication library for chat features",
+      "repo_url": "https://github.com/socketio/socket.io"
+    },
+    "qr_code_scanner": {
+      "name": "react-qr-scanner",
+      "description": "Open-source QR scanner for mobile/web applications",
+      "repo_url": "https://github.com/JodusNodus/react-qr-scanner"
+    },
+    "push_notifications": {
+      "name": "OneSignal",
+      "description": "Push notification service for mobile and web",
+      "repo_url": "https://github.com/OneSignal/OneSignal-Android-SDK"
+    },
+    "image_compression": {
+      "name": "ImageMagick",
+      "description": "Tool for image manipulation and compression",
+      "repo_url": "https://github.com/ImageMagick/ImageMagick"
+    }
+  }
+}
