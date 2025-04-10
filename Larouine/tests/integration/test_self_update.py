@@ -13,3 +13,12 @@ class TestSelfUpdate(unittest.TestCase):
     def tearDown(self):
         # استعادة النسخة الأصلية بعد الاختبار
         pass
+
+import unittest
+from src.hisham.core.fusion_core import FusionCore
+
+class TestSelfUpdate(unittest.TestCase):
+    def test_self_healing(self):
+        core = FusionCore()
+        # اختبار قدرة النظام على استعادة نفسه هنا
+        self.assertTrue(core.self_heal())
