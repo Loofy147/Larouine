@@ -36,3 +36,24 @@ class ExternalFileManager:
         except:
             shutil.copyfile(backup_path, file_path)
             return False
+
+class CLIInterface:
+    def __init__(self, fusion_system):
+        self.fusion = fusion_system
+        
+    def manual_merge(self):
+        base_file = input("Enter base file path: ")
+        new_file = input("Enter new file path: ")
+        
+        try:
+            with open(base_file) as f:
+                base = f.read()
+            with open(new_file) as f:
+                new = f.read()
+                
+            merged = self.fusion.merge_code(base, new)
+            with open(base_file, 'w') as f:
+                f.write(merged)
+            print("Merge successful!")
+        except Exception as e:
+            print(f"Merge failed: {str(e)}")
