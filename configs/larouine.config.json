@@ -354,5 +354,7 @@
 353|     "name": "ImageMagick",
 354|     "description": "Tool for image manipulation and compression",
 355|     "repo_url": "https://github.com/ImageMagick/ImageMagick"
+...
 356|   }
 357| }
+358| }
