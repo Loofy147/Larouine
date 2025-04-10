@@ -13,6 +13,13 @@
     }
   },
 
+"github_settings": {
+  "repo_owner": "Loofy147",
+  "repo_name": "Larouine",
+  "repo_branch": "main"
+}
+
+
   "core_components": {
     "user_app": {
       "name": "User Mobile Application",
