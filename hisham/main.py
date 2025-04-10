@@ -33,7 +33,8 @@ def generate_report(config, results):
     """
     إنشاء تقرير بناءً على نتائج التحليل.
     """
-    report_filename = config.get("report_file", "project_analysis.pdf")
+    # استخدام getattr بدلاً من get
+    report_filename = getattr(config, "report_file", "project_analysis.pdf")
     report = ReportGenerator(report_filename)
     report.add_header("Project Analysis Report")
     for component_name, top_results in results:
