@@ -7,16 +7,17 @@
     "target_regions": ["DZ", "TN", "MA"],
     "languages": ["ar", "fr", "en"],
     "repository": {
-  "name": "Larouine",
-  "url": "git@github.com:Loofy147/Larouine.git",
-  "main_branch": "main"
-},
-"github_settings": {
-  "repo_owner": "Loofy147",
-  "repo_name": "Larouine",
-  "repo_branch": "main"
-},
-"core_components": {
+      "name": "Larouine",
+      "url": "git@github.com:Loofy147/Larouine.git",
+      "main_branch": "main"
+    }
+  },
+  "github_settings": {
+    "repo_owner": "Loofy147",
+    "repo_name": "Larouine",
+    "repo_branch": "main"
+  },
+  "core_components": {
     "user_app": {
       "name": "User Mobile Application",
       "requirements": {
@@ -51,7 +52,6 @@
         }
       }
     },
-
     "driver_app": {
       "name": "Driver Management System",
       "critical_features": [
@@ -72,7 +72,6 @@
         "payment_summary": true
       }
     },
-
     "store_panel": {
       "name": "Store Management Dashboard",
       "essential_functionality": [
@@ -91,7 +90,6 @@
       }
     }
   },
-
   "technical_specifications": {
     "frontend": {
       "mobile": {
@@ -112,7 +110,6 @@
         "user_panel": "React.js"
       }
     },
-
     "backend": {
       "language": "Node.js",
       "framework": "NestJS",
@@ -130,7 +127,6 @@
         "security_headers": ["Content-Security-Policy", "Strict-Transport-Security"]
       }
     },
-
     "database": {
       "primary": "PostgreSQL",
       "replication": "Master-Slave with 2 Replicas",
@@ -140,14 +136,12 @@
         "cloud_backups": "AWS S3"
       }
     },
-
     "security": {
       "encryption_standards": ["AES-256", "TLS 1.3", "RSA"],
       "compliance": ["GDPR", "PCI DSS Level 1", "Local Data Protection Laws"],
       "audit_requirements": ["Quarterly Penetration Testing", "Annual Security Audit"]
     }
   },
-
   "integration_matrix": {
     "payment_gateways": [
       {
@@ -199,7 +193,6 @@
       ]
     }
   },
-
   "deployment_specs": {
     "infrastructure": {
       "cloud_provider": "AWS",
@@ -224,7 +217,6 @@
       "local_payment_methods": ["PostPay", "Carte Edahabia"]
     }
   },
-
   "quality_requirements": {
     "performance": {
       "mobile_app": {
@@ -252,7 +244,6 @@
       }
     }
   },
-
   "development_roadmap": {
     "phase_1": {
       "name": "Core MVP Development",
@@ -274,68 +265,65 @@
       "load_tests": "Locust + Artillery"
     }
   },
-
   "external_resources": {
-  "design_assets": {
-    "figma_url": "https://figma.com/file/****",
-    "icon_set": "Material Design Icons v5",
-    "color_palettes": [
-      "https://coolors.co/palette/****",
-      "https://www.color-hex.com/color-palettes/"
-    ],
-    "typography": {
-      "primary_font": "Roboto",
-      "secondary_font": "Poppins",
-      "font_url": "https://fonts.google.com/"
-    }
-  },
-
-  "legal_documents": {
-    "privacy_policy": "/legal/privacy_v3.pdf",
-    "terms_of_service": "/legal/tos_v2.md",
-    "cookie_policy": "/legal/cookie_policy.pdf"
-  },
-
-  "third_party_integrations": {
-    "maps": {
-      "primary": "Google Maps API",
-      "fallback": "OpenStreetMap",
-      "features": [
-        "Geocoding API",
-        "Directions API",
-        "Places Autocomplete"
-      ]
-    },
-    "payment_gateways": [
-      {
-        "name": "Dahabiya",
-        "api_version": "v2.1",
-        "features": [
-          "Card Processing",
-          "Refund Handling",
-          "3D Secure Support"
-        ],
-        "test_credentials": {
-          "sandbox_key": "dhb_sandbox_****",
-          "production_key": "ENV:DAHABIYA_PROD_KEY"
-        }
+    "design_assets": {
+      "figma_url": "https://figma.com/file/****",
+      "icon_set": "Material Design Icons v5",
+      "color_palettes": [
+        "https://coolors.co/palette/****",
+        "https://www.color-hex.com/color-palettes/"
+      ],
+      "typography": {
+        "primary_font": "Roboto",
+        "secondary_font": "Poppins",
+        "font_url": "https://fonts.google.com/"
       }
-    ],
-    "analytics": {
-      "primary": "Firebase Analytics",
-      "secondary": "Mixpanel",
-      "kpis": [
-        "User Retention Rate",
-        "Average Order Value",
-        "Delivery Time Metrics"
-      ]
     },
-    "social_media_integration": {
-      "facebook_login": "https://developers.facebook.com/docs/facebook-login",
-      "google_login": "https://developers.google.com/identity"
+    "legal_documents": {
+      "privacy_policy": "/legal/privacy_v3.pdf",
+      "terms_of_service": "/legal/tos_v2.md",
+      "cookie_policy": "/legal/cookie_policy.pdf"
+    },
+    "third_party_integrations": {
+      "maps": {
+        "primary": "Google Maps API",
+        "fallback": "OpenStreetMap",
+        "features": [
+          "Geocoding API",
+          "Directions API",
+          "Places Autocomplete"
+        ]
+      },
+      "payment_gateways": [
+        {
+          "name": "Dahabiya",
+          "api_version": "v2.1",
+          "features": [
+            "Card Processing",
+            "Refund Handling",
+            "3D Secure Support"
+          ],
+          "test_credentials": {
+            "sandbox_key": "dhb_sandbox_****",
+            "production_key": "ENV:DAHABIYA_PROD_KEY"
+          }
+        }
+      ],
+      "analytics": {
+        "primary": "Firebase Analytics",
+        "secondary": "Mixpanel",
+        "kpis": [
+          "User Retention Rate",
+          "Average Order Value",
+          "Delivery Time Metrics"
+        ]
+      },
+      "social_media_integration": {
+        "facebook_login": "https://developers.facebook.com/docs/facebook-login",
+        "google_login": "https://developers.google.com/identity"
+      }
     }
   },
-
   "open_source_libraries": {
     "real_time_chat": {
       "name": "Socket.io",
