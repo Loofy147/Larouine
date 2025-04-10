@@ -7,12 +7,10 @@
     "target_regions": ["DZ", "TN", "MA"],
     "languages": ["ar", "fr", "en"],
     "repository": {
-      "name": "Larouine",
-      "url": "git@github.com:Loofy147/Larouine.git",
-      "main_branch": "main"
-    }
-  },
-
+  "name": "Larouine",
+  "url": "git@github.com:Loofy147/Larouine.git",
+  "main_branch": "main"
+},  
 "github_settings": {
   "repo_owner": "Loofy147",
   "repo_name": "Larouine",
