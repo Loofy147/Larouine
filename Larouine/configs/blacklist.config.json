@@ -1,0 +1,10 @@
+{
+    "protected_files": [
+        "src/hisham/core/quantum_mirror.py",
+        "configs/larouine.config.json"
+    ],
+    "restricted_functions": [
+        "os.remove",
+        "shutil.rmtree"
+    ]
+}
