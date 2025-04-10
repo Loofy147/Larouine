@@ -15,3 +15,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+from .core.evolution_loop import EvolutionLoop
+from .interfaces.cli_interface import CLIInterface
+
+def main():
+    cli = CLIInterface()
+    cli.start_interactive()
+    
+    # بدء حلقة التطور في الخلفية
+    evolution = EvolutionLoop()
+    evolution.start()
