@@ -1,4 +1,5 @@
 {
+  "project_name": "Grocery Delivery System - Larouine",
   "project_meta": {
     "name": "Grocery Delivery System - Larouine",
     "version": "1.0.0",
@@ -17,20 +18,33 @@
       "name": "User Mobile Application",
       "requirements": {
         "authentication": {
-          "methods": ["OTP", "Guest Access"],
-          "security": ["JWT", "SSL Pinning"],
-          "search_keywords": ["multi-factor auth", "phone verification", "JWT implementation"]
+          "methods": ["OTP", "Guest Access", "Social Media Login (Facebook, Google)"],
+          "security": ["JWT", "SSL Pinning", "Two-Factor Authentication (TFA)"],
+          "search_keywords": ["multi-factor auth", "phone verification", "JWT implementation", "OAuth"]
         },
         "product_browsing": {
-          "features": ["Category Navigation", "Barcode Scanning", "Advanced Filters"],
+          "features": ["Category Navigation", "Barcode Scanning", "Advanced Filters", "Product Recommendations (AI-based)", "Search History"],
           "search_params": {
             "min_stars": 100,
-            "max_age_days": 180
+            "max_age_days": 180,
+            "price_range": [0, 1000],
+            "sort_by": ["price", "rating"]
           }
         },
         "payment_system": {
-          "gateways": ["Dahabiya", "CIB", "Barcode Payments"],
-          "compliance": ["PCI DSS Level 1"]
+          "gateways": ["Dahabiya", "CIB", "Barcode Payments", "Stripe", "PayPal"],
+          "compliance": ["PCI DSS Level 1"],
+          "local_payment_methods": ["PostPay", "Carte Edahabia"],
+          "currency_handling": {
+            "primary": "DZD",
+            "supported": ["DZD", "TND", "MAD", "USD", "EUR"]
+          }
+        },
+        "order_tracking": {
+          "real_time_tracking": true,
+          "estimated_delivery_time": true,
+          "push_notifications": true,
+          "order_history": true
         }
       }
     },
@@ -40,11 +54,19 @@
       "critical_features": [
         "Real-time GPS Tracking",
         "Order Assignment Algorithm",
-        "Performance Analytics"
+        "Performance Analytics",
+        "Route Optimization (AI-based)",
+        "Driver Rating System"
       ],
       "integration_requirements": {
-        "maps": ["Google Maps API", "Geofencing"],
-        "notification_system": ["Push", "SMS"]
+        "maps": ["Google Maps API", "Geofencing", "OpenStreetMap"],
+        "notification_system": ["Push", "SMS", "Email"],
+        "payment_system": ["Stripe Integration for Driver Payments"]
+      },
+      "driver_dashboard": {
+        "real_time_updates": true,
+        "delivery_status": ["Picked Up", "On the Way", "Delivered"],
+        "payment_summary": true
       }
     },
 
@@ -53,11 +75,16 @@
       "essential_functionality": [
         "Inventory Management API",
         "Dynamic Pricing Engine",
-        "Sales Analytics"
+        "Sales Analytics",
+        "Product Management",
+        "Stock Alerts",
+        "Product Recommendations",
+        "Order Management"
       ],
       "tech_constraints": {
         "framework": "React.js",
-        "state_management": "Redux"
+        "state_management": "Redux",
+        "real_time_data": "Socket.IO"
       }
     }
   },
@@ -67,11 +94,19 @@
       "mobile": {
         "primary_stack": "Flutter",
         "required_versions": "Flutter 3.3+",
-        "critical_libraries": ["Provider", "Google Maps SDK", "Barcode Scanner"]
+        "critical_libraries": [
+          "Provider",
+          "Google Maps SDK",
+          "Barcode Scanner",
+          "Firebase Analytics",
+          "Push Notifications (Firebase)",
+          "Stripe Payment SDK"
+        ]
       },
       "web": {
         "admin_panel": "React.js + Ant Design",
-        "store_panel": "Vue.js + Vuetify"
+        "store_panel": "Vue.js + Vuetify",
+        "user_panel": "React.js"
       }
     },
 
@@ -81,11 +116,15 @@
       "essential_services": [
         "Redis Caching Layer",
         "WebSocket Server",
-        "Queue Management System (BullMQ)"
+        "Queue Management System (BullMQ)",
+        "API Rate Limiting (Redis)",
+        "Push Notifications API"
       ],
       "api_standards": {
         "response_time": "<2s",
-        "rate_limiting": "1000 requests/min"
+        "rate_limiting": "1000 requests/min",
+        "jwt_verification": true,
+        "security_headers": ["Content-Security-Policy", "Strict-Transport-Security"]
       }
     },
 
@@ -94,14 +133,15 @@
       "replication": "Master-Slave with 2 Replicas",
       "backup_strategy": {
         "frequency": "Every 2 hours",
-        "retention": "7 days"
+        "retention": "7 days",
+        "cloud_backups": "AWS S3"
       }
     },
 
     "security": {
-      "encryption_standards": ["AES-256", "TLS 1.3"],
-      "compliance": ["GDPR", "Local Data Protection Laws"],
-      "audit_requirements": ["Quarterly Penetration Testing"]
+      "encryption_standards": ["AES-256", "TLS 1.3", "RSA"],
+      "compliance": ["GDPR", "PCI DSS Level 1", "Local Data Protection Laws"],
+      "audit_requirements": ["Quarterly Penetration Testing", "Annual Security Audit"]
     }
   },
 
@@ -109,11 +149,29 @@
     "payment_gateways": [
       {
         "name": "Dahabiya",
-        "features": ["Card Processing", "Refund Handling"],
+        "features": ["Card Processing", "Refund Handling", "Payment Tracking"],
         "api_version": "v2.1",
         "test_credentials": {
           "sandbox_key": "dhb_sandbox_****",
           "production_key": "ENV:DAHABIYA_PROD_KEY"
+        }
+      },
+      {
+        "name": "Stripe",
+        "features": ["Card Payments", "Wallet Integration", "Subscription Billing"],
+        "api_version": "v3.0",
+        "test_credentials": {
+          "sandbox_key": "stripe_sandbox_****",
+          "production_key": "ENV:STRIPE_PROD_KEY"
+        }
+      },
+      {
+        "name": "PayPal",
+        "features": ["Payment Gateway", "Refund Processing"],
+        "api_version": "v2",
+        "test_credentials": {
+          "sandbox_key": "paypal_sandbox_****",
+          "production_key": "ENV:PAYPAL_PROD_KEY"
         }
       }
     ],
@@ -123,7 +181,8 @@
       "required_features": [
         "Geocoding API",
         "Directions API",
-        "Places Autocomplete"
+        "Places Autocomplete",
+        "Route Optimization"
       ]
     },
     "analytics": {
@@ -132,7 +191,8 @@
       "kpis": [
         "User Retention Rate",
         "Average Order Value",
-        "Delivery Time Metrics"
+        "Delivery Time Metrics",
+        "Driver Performance"
       ]
     }
   },
@@ -140,22 +200,23 @@
   "deployment_specs": {
     "infrastructure": {
       "cloud_provider": "AWS",
-      "services": ["EC2", "RDS", "S3", "CloudFront"],
-      "cdn_requirements": ["Global Edge Network", "DDoS Protection"]
+      "services": ["EC2", "RDS", "S3", "CloudFront", "Lambda"],
+      "cdn_requirements": ["Global Edge Network", "DDoS Protection", "Real-time Load Balancing"]
     },
     "monitoring": {
-      "tools": ["Prometheus/Grafana", "Sentry"],
+      "tools": ["Prometheus/Grafana", "Sentry", "Datadog"],
       "alert_policies": [
         "Server CPU > 80%",
         "API Error Rate > 1%",
-        "Payment Failures > 0.5%"
+        "Payment Failures > 0.5%",
+        "Critical Logs > 5 per minute"
       ]
     },
     "localization": {
       "rtl_support": true,
       "currency_handling": {
         "primary": "DZD",
-        "supported": ["DZD", "TND", "MAD"]
+        "supported": ["DZD", "TND", "MAD", "USD", "EUR"]
       },
       "local_payment_methods": ["PostPay", "Carte Edahabia"]
     }
@@ -169,7 +230,8 @@
       },
       "api": {
         "p99_latency": "<1.5s",
-        "throughput": "1000 RPS"
+        "throughput": "1000 RPS",
+        "high_availability": true
       }
     },
     "reliability": {
@@ -213,30 +275,3 @@
   "external_resources": {
     "design_assets": {
       "figma_url": "https://figma.com/file/****",
-      "icon_set": "Material Design Icons v5"
-    },
-    "legal_documents": {
-      "privacy_policy": "/legal/privacy_v3.pdf",
-      "terms_of_service": "/legal/tos_v2.md"
-    }
-  },
-
-  "github_settings": {
-    "protected_branches": ["main", "production"],
-    "required_checks": [
-      "Unit Tests",
-      "CodeQL Analysis",
-      "Linter Verification"
-    ],
-    "collaborators": [
-      {
-        "username": "backend_dev",
-        "permissions": "push"
-      },
-      {
-        "username": "qa_engineer",
-        "permissions": "pull"
-      }
-    ]
-  }
-}
