@@ -26,3 +26,26 @@ def main():
     # بدء حلقة التطور في الخلفية
     evolution = EvolutionLoop()
     evolution.start()
+
+from .core.fusion_core import FusionCore
+from .core.evolution_loop import EvolutionLoop
+from .interfaces.cli_interface import CLIInterface
+from .modules.smart_fusion_system import SmartFusionSystem
+
+def main():
+    # تهيئة المكونات
+    fusion_system = SmartFusionSystem()
+    evolution = EvolutionLoop()
+    cli = CLIInterface(fusion_system)
+    
+    # بدء الأنظمة
+    evolution.start()
+    
+    try:
+        cli.start()
+    except KeyboardInterrupt:
+        evolution.is_active = False
+        print("System shutdown completed.")
+
+if __name__ == "__main__":
+    main()
