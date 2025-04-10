@@ -5,6 +5,7 @@ from hisham.github_integration import GitHubAPI
 from hisham.report_generator import ReportGenerator
 from hisham.utils import push_to_github, setup_repository
 
+
 def main(config_path: str):
     # تحميل إعدادات المشروع من ملف التكوين
     config = load_config(config_path)
@@ -30,10 +31,13 @@ def main(config_path: str):
         # يتم استنساخ المستودع من GitHub باستخدام الإعدادات الموجودة في التكوين
         setup_repository(config.github_settings.dict())
         # دفع التغييرات مع رسالة توضيحية
-        push_to_github(config.github_settings.repo_name, "Add project analysis report")
+        push_to_github(
+            config.github_settings.repo_name,
+            "Add project analysis report")
     except Exception as e:
         print(f"GitHub integration error: {e}")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
