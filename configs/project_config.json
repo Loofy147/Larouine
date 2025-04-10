@@ -1,0 +1,242 @@
+{
+  "project_meta": {
+    "name": "Grocery Delivery System - Larouine",
+    "version": "1.0.0",
+    "type": "Full Stack Mobile/Web Application",
+    "target_regions": ["DZ", "TN", "MA"],
+    "languages": ["ar", "fr", "en"],
+    "repository": {
+      "name": "Larouine",
+      "url": "git@github.com:Loofy147/Larouine.git",
+      "main_branch": "main"
+    }
+  },
+
+  "core_components": {
+    "user_app": {
+      "name": "User Mobile Application",
+      "requirements": {
+        "authentication": {
+          "methods": ["OTP", "Guest Access"],
+          "security": ["JWT", "SSL Pinning"],
+          "search_keywords": ["multi-factor auth", "phone verification", "JWT implementation"]
+        },
+        "product_browsing": {
+          "features": ["Category Navigation", "Barcode Scanning", "Advanced Filters"],
+          "search_params": {
+            "min_stars": 100,
+            "max_age_days": 180
+          }
+        },
+        "payment_system": {
+          "gateways": ["Dahabiya", "CIB", "Barcode Payments"],
+          "compliance": ["PCI DSS Level 1"]
+        }
+      }
+    },
+
+    "driver_app": {
+      "name": "Driver Management System",
+      "critical_features": [
+        "Real-time GPS Tracking",
+        "Order Assignment Algorithm",
+        "Performance Analytics"
+      ],
+      "integration_requirements": {
+        "maps": ["Google Maps API", "Geofencing"],
+        "notification_system": ["Push", "SMS"]
+      }
+    },
+
+    "store_panel": {
+      "name": "Store Management Dashboard",
+      "essential_functionality": [
+        "Inventory Management API",
+        "Dynamic Pricing Engine",
+        "Sales Analytics"
+      ],
+      "tech_constraints": {
+        "framework": "React.js",
+        "state_management": "Redux"
+      }
+    }
+  },
+
+  "technical_specifications": {
+    "frontend": {
+      "mobile": {
+        "primary_stack": "Flutter",
+        "required_versions": "Flutter 3.3+",
+        "critical_libraries": ["Provider", "Google Maps SDK", "Barcode Scanner"]
+      },
+      "web": {
+        "admin_panel": "React.js + Ant Design",
+        "store_panel": "Vue.js + Vuetify"
+      }
+    },
+
+    "backend": {
+      "language": "Node.js",
+      "framework": "NestJS",
+      "essential_services": [
+        "Redis Caching Layer",
+        "WebSocket Server",
+        "Queue Management System (BullMQ)"
+      ],
+      "api_standards": {
+        "response_time": "<2s",
+        "rate_limiting": "1000 requests/min"
+      }
+    },
+
+    "database": {
+      "primary": "PostgreSQL",
+      "replication": "Master-Slave with 2 Replicas",
+      "backup_strategy": {
+        "frequency": "Every 2 hours",
+        "retention": "7 days"
+      }
+    },
+
+    "security": {
+      "encryption_standards": ["AES-256", "TLS 1.3"],
+      "compliance": ["GDPR", "Local Data Protection Laws"],
+      "audit_requirements": ["Quarterly Penetration Testing"]
+    }
+  },
+
+  "integration_matrix": {
+    "payment_gateways": [
+      {
+        "name": "Dahabiya",
+        "features": ["Card Processing", "Refund Handling"],
+        "api_version": "v2.1",
+        "test_credentials": {
+          "sandbox_key": "dhb_sandbox_****",
+          "production_key": "ENV:DAHABIYA_PROD_KEY"
+        }
+      }
+    ],
+    "mapping_services": {
+      "primary": "Google Maps Platform",
+      "fallback": "OpenStreetMap",
+      "required_features": [
+        "Geocoding API",
+        "Directions API",
+        "Places Autocomplete"
+      ]
+    },
+    "analytics": {
+      "primary": "Firebase Analytics",
+      "secondary": "Mixpanel",
+      "kpis": [
+        "User Retention Rate",
+        "Average Order Value",
+        "Delivery Time Metrics"
+      ]
+    }
+  },
+
+  "deployment_specs": {
+    "infrastructure": {
+      "cloud_provider": "AWS",
+      "services": ["EC2", "RDS", "S3", "CloudFront"],
+      "cdn_requirements": ["Global Edge Network", "DDoS Protection"]
+    },
+    "monitoring": {
+      "tools": ["Prometheus/Grafana", "Sentry"],
+      "alert_policies": [
+        "Server CPU > 80%",
+        "API Error Rate > 1%",
+        "Payment Failures > 0.5%"
+      ]
+    },
+    "localization": {
+      "rtl_support": true,
+      "currency_handling": {
+        "primary": "DZD",
+        "supported": ["DZD", "TND", "MAD"]
+      },
+      "local_payment_methods": ["PostPay", "Carte Edahabia"]
+    }
+  },
+
+  "quality_requirements": {
+    "performance": {
+      "mobile_app": {
+        "launch_time": "<2s",
+        "fps": "≥60 FPS"
+      },
+      "api": {
+        "p99_latency": "<1.5s",
+        "throughput": "1000 RPS"
+      }
+    },
+    "reliability": {
+      "uptime": "99.95% SLA",
+      "disaster_recovery": {
+        "rto": "<4h",
+        "rpo": "<15m"
+      }
+    },
+    "scalability": {
+      "target_users": "100,000 MAU",
+      "auto_scaling": {
+        "cpu_threshold": "70%",
+        "scale_out_speed": "5 instances/min"
+      }
+    }
+  },
+
+  "development_roadmap": {
+    "phase_1": {
+      "name": "Core MVP Development",
+      "duration": "8 Weeks",
+      "milestones": [
+        "User Authentication Flow",
+        "Basic Product Catalog",
+        "Order Management System"
+      ]
+    },
+    "phase_2": {
+      "name": "Payment Integration",
+      "dependencies": ["Phase 1 Completion"],
+      "risk_factors": ["Bank API Limitations", "PCI Compliance"]
+    },
+    "testing_strategy": {
+      "unit_tests": "Jest + Mockito",
+      "e2e_tests": "Cypress + Appium",
+      "load_tests": "Locust + Artillery"
+    }
+  },
+
+  "external_resources": {
+    "design_assets": {
+      "figma_url": "https://figma.com/file/****",
+      "icon_set": "Material Design Icons v5"
+    },
+    "legal_documents": {
+      "privacy_policy": "/legal/privacy_v3.pdf",
+      "terms_of_service": "/legal/tos_v2.md"
+    }
+  },
+
+  "github_settings": {
+    "protected_branches": ["main", "production"],
+    "required_checks": [
+      "Unit Tests",
+      "CodeQL Analysis",
+      "Linter Verification"
+    ],
+    "collaborators": [
+      {
+        "username": "backend_dev",
+        "permissions": "push"
+      },
+      {
+        "username": "qa_engineer",
+        "permissions": "pull"
+      }
+    ]
+  }
+}
