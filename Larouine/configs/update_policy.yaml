@@ -1,0 +1,5 @@
+update_strategy: "conservative"
+max_file_size: 1048576  # 1MB
+allowed_sources:
+  - "trusted_repos"
+  - "verified_plugins"
