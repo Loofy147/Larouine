@@ -14,14 +14,16 @@ def push_to_github(repo_path: str, commit_message: str, branch: str = "main"):
         logging.error(f"Git operation failed: {e}")
         raise RuntimeError(f"Git operation failed: {e}")
 
-def setup_repository(config: Dict, protocol: str = "ssh"):
+from .config_manager import GitHubConfig
+
+def setup_repository(config: GitHubConfig, protocol: str = "ssh"):
     if protocol not in ["ssh", "https"]:
         raise ValueError("Invalid protocol specified. Use 'ssh' or 'https'.")
     
     if protocol == "ssh":
-        repo_url = f"git@github.com:{config['repo_owner']}/{config['repo_name']}.git"
+        repo_url = f"git@github.com:{config.repo_owner}/{config.repo_name}.git"
     else:
-        repo_url = f"https://github.com/{config['repo_owner']}/{config['repo_name']}.git"
+        repo_url = f"https://github.com/{config.repo_owner}/{config.repo_name}.git"
     
     try:
         logging.info(f"Cloning repository from {repo_url}")

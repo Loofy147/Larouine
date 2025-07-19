@@ -35,7 +35,7 @@ def generate_report(config, results):
     """
     # استخدام getattr بدلاً من get
     report_filename = getattr(config, "report_file", "project_analysis.pdf")
-    report = ReportGenerator(report_filename)
+    report = ReportGenerator(report_filename, config)
     report.add_header("Project Analysis Report")
     for component_name, top_results in results:
         report.add_component_section(component_name, top_results)
@@ -77,7 +77,7 @@ def main(config_path: str):
 
     # دفع التقرير إلى GitHub
     try:
-        setup_repository(config.github_settings.dict())
+        setup_repository(config.github_settings)
         push_to_github(config.github_settings.repo_name, f"Add {report_filename}")
         logging.info("Changes pushed to GitHub.")
     except Exception as e:

@@ -1,0 +1,5 @@
+pydantic
+reportlab
+requests
+pyyaml
+pandas
