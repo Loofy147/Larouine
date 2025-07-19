@@ -1,3 +1,5 @@
+import time
+
 class NotificationSystem:
     def __init__(self):
         self.subscribers = []
