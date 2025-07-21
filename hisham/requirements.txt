@@ -1,0 +1,6 @@
+pandas
+python-dotenv
+requests
+PyYAML
+pydantic
+reportlab
